@@ -1,8 +1,8 @@
 import React from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator, TransitionSpecs} from '@react-navigation/stack';
-import {SafeAreaProvider, useSafeArea} from 'react-native-safe-area-context';
+import {createStackNavigator} from '@react-navigation/stack';
+import {SafeAreaProvider, useSafeAreaInsets} from 'react-native-safe-area-context';
 import {RootSiblingParent} from 'react-native-root-siblings';
 import StorageController from "./Main/Home/view/StorageController";
 import WebViewController from "./Main/Home/view/WebViewController";
@@ -23,7 +23,7 @@ export default function App() {
 }
 
 function ScreenList() {
-    global.INSETS = useSafeArea();
+    global.INSETS = useSafeAreaInsets();
     XWidget.initResource(Assets).initReferenceScreen(375, 677);
     const {Navigator, Screen} = createStackNavigator();
     return <Navigator initialPage={LaunchController} headerMode='none'>
