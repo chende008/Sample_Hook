@@ -9,4 +9,4 @@
 
 ### UI截图
 
-<img src="https://github.com/chende008/Sample_MobX/blob/master/images/react_native_mobx.jpg">
+<img src="https://github.com/chende008/Sample_Hook/blob/master/images/react_native_mobx.jpg">
