@@ -1,23 +1,22 @@
 import React, {useEffect} from 'react';
-import {BackHandler, Alert} from 'react-native';
+import {Alert, BackHandler} from 'react-native';
 
 import {DebugManager} from 'react-native-debug-tool';
 import {Manager} from 'react-native-root-toast';
 import DeviceInfo from 'react-native-device-info';
-import {XImage, XText, XWidget} from 'react-native-easy-app';
+import {XHttpConfig, XImage, XText} from 'react-native-easy-app';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeController from "./HomeController";
 import DiscoverController from "./DiscoverController";
 import MineController from "./MineController";
 import {Notify} from "../../Common/events/Notify";
 import {showToast} from "../../Common/widgets/Loading";
-import HttpConfig from "../http/HttpConfig";
 import {Colors} from "../../Common/storage/Const";
 
 let lastClickTime = (new Date()).valueOf();
 const {Navigator, Screen} = createBottomTabNavigator();
 
-export default function MainController(props) {
+function MainController(props) {
 
     const tabItemOption = (title, iconChecked, iconUnChecked) => {
         return {
@@ -56,7 +55,16 @@ export default function MainController(props) {
         Alert.alert('Token 过期 ', message);
     };
 
-    HttpConfig.init();
+    XHttpConfig().initHttpLogOn(true).initParseDataFunc((result, request, callback) => {
+        let {success, json, message, status, response} = result;
+        DebugManager.appendHttpLogs(request.params, response);
+        if (status === 503) {// token 过期
+            Notify.TOKEN_EXPIRED.sendEvent({message})
+        } else {
+            callback(success, json, message, status, response)
+        }
+    });
+
     DebugManager.initDeviceInfo(DeviceInfo);
     DebugManager.showFloat(Manager);
     global.tabNavigator = props.navigation;
@@ -82,3 +90,5 @@ export default function MainController(props) {
                 component={MineController}/>
     </Navigator>;
 }
+
+export default MainController

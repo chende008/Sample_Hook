@@ -1,12 +1,12 @@
 import React from 'react';
-import {View, LogBox} from 'react-native'
+import {LogBox, View} from 'react-native'
 
 import AsyncStorage from '@react-native-community/async-storage';
 import {RNStorage} from '../Common/storage/AppStorage';
 import {XStorage} from 'react-native-easy-app';
 import XLog from "../Common/utils/RFLog";
 
-export default function LaunchController(props) {
+function LaunchController(props) {
 
     const initSync = async () => {
         let result = await XStorage.initStorageSync(RNStorage, AsyncStorage, printLog);
@@ -35,3 +35,5 @@ export default function LaunchController(props) {
     return <View/>
 }
 
+
+export default LaunchController

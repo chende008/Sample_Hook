@@ -11,7 +11,7 @@ import {XText, XView} from 'react-native-easy-app';
 import DeviceInfo from 'react-native-device-info';
 import {toStr} from '../../Common/utils/Utils';
 
-export default function StorageController() {
+function StorageController() {
 
     const jsonObj = {
         age: 25,
@@ -51,6 +51,8 @@ export default function StorageController() {
         <XText style={[styles.text, {marginBottom: INSETS.bottom}]} text={'文本内容：' + text}/>
     </View>
 }
+
+export default StorageController
 
 const styles = StyleSheet.create({
     text: {

@@ -4,12 +4,12 @@ import {StyleSheet, View} from 'react-native';
 import {Api} from '../http/Api';
 import {showToast} from '../../Common/widgets/Loading';
 import {Colors, CommonStyles, Const} from '../../Common/storage/Const';
-import {XHttp, XImage, XFlatList, XText, XView} from 'react-native-easy-app';
+import {XFlatList, XHttp, XImage, XText, XView} from 'react-native-easy-app';
 import {isEmpty, netWorkException} from "../../Common/utils/Utils";
 
 const headerText = '分页列表支持：无网络，加载中，无数据，加载错误，加载更多等一系列状态展示';
 
-export default function RefreshController() {
+function RefreshController() {
 
     let pageIndex = 1;//页码
     const refreshRef = useRef();
@@ -57,6 +57,8 @@ export default function RefreshController() {
                    renderItem={({item, index}) => renderItem(item, index)}/>
     </View>;
 }
+
+export default RefreshController
 
 const styles = StyleSheet.create({
     header: {

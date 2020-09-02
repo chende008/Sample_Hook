@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import {StyleSheet, View} from 'react-native';
 import WebUtils from "../../Common/utils/WebUtils";
@@ -9,7 +9,7 @@ import WebView from "react-native-webview";
 import {CommonStyles} from "../../Common/storage/Const";
 import {DebugManager} from "react-native-debug-tool";
 
-export default function WebViewController() {
+function WebViewController() {
 
     const defData = {
         title: '',
@@ -69,6 +69,8 @@ export default function WebViewController() {
         </View>
     </View>;
 }
+
+export default WebViewController
 
 const styles = StyleSheet.create({
     parent: {

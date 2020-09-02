@@ -3,7 +3,7 @@ import {ScrollView, StyleSheet, View} from 'react-native';
 import {XText} from 'react-native-easy-app';
 import {Colors, CommonStyles} from "../../Common/storage/Const";
 
-export default function HomeController() {
+function HomeController() {
     const [randomList, setRandomList] = useState([3.14159265358979323846]);
 
     return <View style={[CommonStyles.container, {marginTop: INSETS.top}]}>
@@ -30,6 +30,7 @@ export default function HomeController() {
     </View>
 }
 
+export default HomeController
 
 const styles = StyleSheet.create({
     tip: {

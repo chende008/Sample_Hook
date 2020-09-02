@@ -11,17 +11,6 @@ import MainController from "./Main/Home/tabs/MainController";
 import {XWidget} from "react-native-easy-app";
 import {Assets} from "./Main/Home/http/Api";
 
-export default function App() {
-    console.disableYellowBox = true;
-    return <SafeAreaProvider>
-        <NavigationContainer>
-            <RootSiblingParent>
-                <ScreenList/>
-            </RootSiblingParent>
-        </NavigationContainer>
-    </SafeAreaProvider>
-}
-
 function ScreenList() {
     global.INSETS = useSafeAreaInsets();
     XWidget.initResource(Assets).initReferenceScreen(375, 677);
@@ -32,4 +21,15 @@ function ScreenList() {
         <Screen name='Storage' component={StorageController}/>
         <Screen name='WebView' component={WebViewController}/>
     </Navigator>;
+}
+
+export default function App() {
+    console.disableYellowBox = true;
+    return <SafeAreaProvider>
+        <NavigationContainer>
+            <RootSiblingParent>
+                <ScreenList/>
+            </RootSiblingParent>
+        </NavigationContainer>
+    </SafeAreaProvider>
 }

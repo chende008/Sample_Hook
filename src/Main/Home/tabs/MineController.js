@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
 
 import {XHttp, XText, XView} from 'react-native-easy-app';
@@ -10,7 +10,7 @@ import {Api} from "../http/Api";
 /**
  * 其它接口请求，接口返回的非json数据结构（纯文本&XML数据）
  */
-export default function MineController() {
+function MineController() {
 
     const [content, setContent] = useState();
 
@@ -85,6 +85,8 @@ export default function MineController() {
     </View>
 
 }
+
+export default MineController
 
 const styles = StyleSheet.create({
     btn: {
