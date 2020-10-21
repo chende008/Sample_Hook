@@ -15,7 +15,7 @@ function MineController() {
     const [content, setContent] = useState();
 
     const moviesList = () => {// 返回标准的json的http请求
-        XHttp().url(Api.btcPrice).loadingFunc((loading) => showLoading('请求中，请稍候...', loading)).get((success, json, msg, code) => {
+        XHttp().url(Api.moviesList).loadingFunc((loading) => showLoading('请求中，请稍候...', loading)).get((success, json, msg, code) => {
             if (success) {
                 showToast('请求成功');
                 setContent(JSON.stringify(json));
