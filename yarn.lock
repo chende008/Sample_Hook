@@ -5595,20 +5595,20 @@ react-is@^16.12.0, react-is@^16.13.0, react-is@^16.8.1, react-is@^16.8.4, react-
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-native-debug-tool@^1.1.1:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/react-native-debug-tool/-/react-native-debug-tool-1.1.3.tgz#6bd04f8acfdfe6201b2312cb1bf139054d902e4f"
-  integrity sha512-oY6yf+QTBNeaWnrvewbRrYqeK76gDtkv6yhPAiao/eB80MNnkEBRf0kcJjw/U85DyEUSH6QWzvDXPA0cdrABpA==
+react-native-debug-tool@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.npmjs.org/react-native-debug-tool/-/react-native-debug-tool-1.1.6.tgz#ca4ec89a1173183b3316cecab049093b45ec95a6"
+  integrity sha512-y9UOzCBYrcw/HIU3Pp6Dwd/IpTycuSR5v/FSWzxvZPiO9i4a/hKDAj9QIcetZsmAAC5C8Fi+FiS3FI5Q/kAdyA==
 
 react-native-device-info@^5.6.3:
   version "5.6.3"
   resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-5.6.3.tgz#8b964866fc538bcfb82e25ad88f872139d7a591d"
   integrity sha512-fmaXRjG0NW9FAOdOD86cmjgoxA/2I0lBq1NZmxQ2sgElyRjLxZLtuJn/QpP8hmFeTlKFDSZpSDvEnB+UUihcmw==
 
-react-native-easy-app@^1.7.17:
-  version "1.7.17"
-  resolved "https://registry.npmjs.org/react-native-easy-app/-/react-native-easy-app-1.7.17.tgz#9d93b2873ea869046d97f08bb43743e38c67562e"
-  integrity sha512-plL9ISmbeoxbYRjYG6nGFSZluaMrZEEsi8ZkBn/CPbwXwNY5fLRFdSy609f8UrRMe2sRLxNb0puD5rbYaXMZYg==
+react-native-easy-app@^1.7.18:
+  version "1.7.18"
+  resolved "https://registry.npmjs.org/react-native-easy-app/-/react-native-easy-app-1.7.18.tgz#9831104b26ffca1d342260e4e89c740740743e8b"
+  integrity sha512-th558zoC9J+ObDg7HAujSOyhaSzjnPn/HeVmAtzPAPb4+m0a4lHzGr7HgiWB8CLLZnYEg7h4NBQzrf1tkJZ2UA==
 
 react-native-gesture-handler@^1.7.0:
   version "1.7.0"
