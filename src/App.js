@@ -2,8 +2,8 @@ import React from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {SafeAreaProvider, useSafeAreaInsets} from 'react-native-safe-area-context';
 import {RootSiblingParent} from 'react-native-root-siblings';
+import {SafeAreaProvider, useSafeAreaInsets} from 'react-native-safe-area-context';
 import StorageController from "./Main/Home/view/StorageController";
 import WebViewController from "./Main/Home/view/WebViewController";
 import LaunchController from "./Main/Welcome/LaunchController";
