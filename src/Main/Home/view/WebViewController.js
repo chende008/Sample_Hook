@@ -22,7 +22,6 @@ function WebViewController() {
     const webView = useRef();
     const [loadData, setLoadData] = useState(defData);
     const {title, loading, url, canGoBack} = loadData;
-    console.log('XXX', JSON.stringify(loadData));
 
     useEffect(() => {
         progressBar.current.showAnimal();
