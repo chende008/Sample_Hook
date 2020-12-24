@@ -18,8 +18,7 @@ function WebViewController() {
     url: 'https://www.baidu.com'
   };
 
-  const progressBar = useRef();
-  const webView = useRef();
+  const progressBar = useRef(), webView = useRef();
   const [loadData, setLoadData] = useState(defData);
   const { title, loading, url, canGoBack } = loadData;
 
@@ -30,7 +29,7 @@ function WebViewController() {
   });
 
   const reloadPage = ({ pageName, url }) => {
-    if ('WebViewController'.equals(pageName) && url) {
+    if (WebViewController.name.equals(pageName) && url) {
       setLoadData({ ...loadData, url });
     }
   };
