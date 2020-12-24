@@ -1,23 +1,23 @@
-import {EventEmitter} from 'events'
+import { EventEmitter } from 'events'
 
 export default class NotifyEvent {
 
-    constructor(eventName) {
-        this.eventName = eventName;
-        if (!global.eventEmitter) {
-            global.eventEmitter = new EventEmitter();
-        }
+  constructor(eventName) {
+    this.eventName = eventName;
+    if (!global.eventEmitter) {
+      global.eventEmitter = new EventEmitter();
     }
+  }
 
-    register = func => {
-        return global.eventEmitter.addListener(this.eventName, func);
-    };
+  register = func => {
+    return global.eventEmitter.addListener(this.eventName, func);
+  };
 
-    unRegister = func => {
-        return global.eventEmitter.removeListener(this.eventName, func);
-    };
+  unRegister = func => {
+    return global.eventEmitter.removeListener(this.eventName, func);
+  };
 
-    sendEvent = targetObj => {
-        global.eventEmitter.emit(this.eventName, targetObj);
-    }
+  sendEvent = targetObj => {
+    global.eventEmitter.emit(this.eventName, targetObj);
+  }
 }

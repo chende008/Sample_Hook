@@ -1,33 +1,33 @@
-import {Linking} from "react-native";
-import {Notify} from "../events/Notify";
+import { Linking } from "react-native";
+import { Notify } from "../events/Notify";
 import RFLog from "./RFLog";
 
 export default class WebUtils {
 
-    static msgFromH5(data, webView) {
-        RFLog.log('来自H5消息', JSON.stringify(data));
-        if (typeof data !== 'object') return; //不接收非对象数据
-        let {type, value} = data;
-        switch (type) {
-            case 'toLogin': //跳转到登录界面（H5页面Token过期）
-                Notify.TOKEN_EXPIRED.sendEvent({message: 'H5 页面Token过期'});
-                break;
-            case 'openUrl':
-                Linking.openURL(value);
-                break;
-            default:
-                break
-        }
+  static msgFromH5(data, webView) {
+    RFLog.log('来自H5消息', JSON.stringify(data));
+    if (typeof data !== 'object') return; //不接收非对象数据
+    let { type, value } = data;
+    switch (type) {
+      case 'toLogin': //跳转到登录界面（H5页面Token过期）
+        Notify.TOKEN_EXPIRED.sendEvent({ message: 'H5 页面Token过期' });
+        break;
+      case 'openUrl':
+        Linking.openURL(value);
+        break;
+      default:
+        break
     }
+  }
 
-    static postMsgToH5(type, data, webView) {
-        switch (type) {
+  static postMsgToH5(type, data, webView) {
+    switch (type) {
 
-        }
     }
+  }
 
-    static initInjectJs() {
-        return `${this.vConsole()}
+  static initInjectJs() {
+    return `${this.vConsole()}
         (function () {
             function wrap(fn) {
                 return function wrapper() {
@@ -53,10 +53,10 @@ export default class WebUtils {
         })();
         
         true;`
-    }
+  }
 
-    static vConsole() {
-        return ` var script = document.createElement('script')
+  static vConsole() {
+    return ` var script = document.createElement('script')
         script.type = 'text/javascript'
         script.src = 'https://cdn.bootcss.com/vConsole/3.3.4/vconsole.min.js'
         document.head.appendChild(script)
@@ -68,7 +68,7 @@ export default class WebUtils {
         document.head.appendChild(script2)
       }, 2000)
         `
-    }
+  }
 
 }
 
